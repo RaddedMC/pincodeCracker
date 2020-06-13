@@ -1,0 +1,10 @@
+ # pincodeCracker
+From my YouTube video 'Cracking passcodes with code', or something like that.
+DISCLAIMER: I am not responsible for any damage caused by this code. In its current state here on this repository it is absolutely harmless, and should not be used for malicous intent.
+This project was actually for my final in Computer Science, where I was tasked to compare two algorithms to one another. I chose to build my own algorithms which bruteforce the 6-digit PIN codes commonly seen on an iPhone, one more effeciently than the other.
+In this repo are a few scripts that I used to keep an eye on my hardware while I was testing, as well as a few different versions of the code that I used. Anything with the suffix of *-testingVer is exactly the version that I used in the video, and did not change to keep up the legitimacy of the test. Anything with the suffix of *-final has been updated to correct bugs that I found during testing or other issues.
+
+basicAlg.cpp literally counts from 0-999999. It's pretty boring.
+advancedAlg.cpp uses some fun logic, including it's key tryAllCombosIncluding() function to check for about 200,000 common passcodes before it begins its own bruteforce. It will never try the same pin code twice, and will crack pretty much every human-made passcode much more quickly than basicAlg will. You can modify its main() function to change up the order in that it tries various combinations. This allows the algorithm to be better customized to you (or your target).
+
+Installation is simple. clone the repo and compile basicAlg.cpp or advancedAlg.cpp, and secretCode.cpp into seperate executables. Make sure your /home directory is accessible, then run secretCode.cpp and set a passcode with it. Once your code has been verified, start up your algorithm of choice and watch the magic happen! Since it didn't effect testing I added a bell to secretCode.cpp, to let you know when your passcode has been successfully cracked. You'll have to manually close the programs and delete the /home/user/passwdfile yourself.
