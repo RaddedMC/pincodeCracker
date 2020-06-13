@@ -61,10 +61,6 @@ void tryCode(int code) {
 		fstream outFile = openFileForWrite();
 		char * codeStr = new char[7]; sprintf(codeStr, "%06d", code);
 		cout << "Trying code " << codeStr << "..." << endl;
-		if (codeStr == "000000" || codeStr == "0") {
-			cout << "\a";
-			usleep(5000000);
-		}
 		numTestedCombos++;
 		testedCombos[numTestedCombos] = code;
 		writeFile(&outFile, codeStr);
@@ -109,6 +105,7 @@ int main() {
 	cout << "Starting advanced brute..." << endl;
 	// List of most common pin codes https://www.theguardian.com/money/blog/2012/sep/28/debit-cards-currentaccounts#:~:text=1234%20accounts%20for%2010.7%25%20of,of%20all%20pins%20in%20use.
 	// https://lifehacker.com/the-most-and-least-common-pin-numbers-and-numeric-pas-5944567
+	tryCode(000000);
 	tryAllCombosIncluding(1234); // Why do people still set this as their pin code lmao
 	tryAllCombosIncluding(69); tryAllCombosIncluding(420); // nice
 	tryAllCombosIncluding(4321);
